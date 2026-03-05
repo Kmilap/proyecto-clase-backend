@@ -19,13 +19,7 @@
 </header>
 
 <!-- NAVBAR -->
-<nav>
-    <a href="{{ route('products.index') }}" class="active">Productos</a>
-    <a href="{{ route('products.create') }}">Agregar Producto</a>
-    <a href="#">Categorías</a>
-    <a href="#">Ofertas</a>
-    <a href="#">Contacto</a>
-</nav>
+@include('layout.navbar')
 
 <!-- PAGE HEADER -->
 <div class="page-header">
@@ -118,9 +112,7 @@
 </div>
 
 <!-- FOOTER -->
-<footer>
-    <p>&copy; 2026<strong>ShopLaravel</strong> — Proyecto académico MVC · Todos los derechos reservados.</p>
-</footer>
+@include('layout.footer')
 
 </body>
 </html>
