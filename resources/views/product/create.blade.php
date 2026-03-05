@@ -98,10 +98,13 @@
 
                 <div class="form-group">
                     <label for="estado">Estado <span class="req">*</span></label>
-                    <select id="estado" name="estado" required>
+                    <select id="estado" name="categoria" required>
                         <option value="" disabled selected>— Selecciona el estado —</option>
-                        <option value="activo"   {{ old('estado') === 'activo'   ? 'selected' : '' }}>✅ Activo</option>
-                        <option value="inactivo" {{ old('estado') === 'inactivo' ? 'selected' : '' }}>❌ Inactivo</option>
+                        @foreach ( $categoryList as $category)
+                           <option value="{{ $category->id }}" {{ $category->name }}>
+                                
+                            </option> 
+                        @endforeach
                     </select>
                     @error('estado')
                         <div class="field-hint" style="color:#DC3545">{{ $message }}</div>
