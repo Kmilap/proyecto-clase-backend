@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopLaravel - Detalle del Producto</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
-<body>
+@extends('layout.app')
 
-<!-- HEADER -->
-<header>
-    <a class="logo" href="#">Shop<span>Laravel</span></a>
-    <div class="header-actions">
-        <a href="#">Inicio</a>
-        <a href="#">Mi cuenta</a>
-        <a href="#" class="btn-cart">🛒 Carrito</a>
-    </div>
-</header>
-
-<!-- NAVBAR -->
-@include('layout.navbar')
+@section('content')
 
 <!-- PAGE HEADER -->
 <div class="page-header">
@@ -44,8 +25,10 @@
                 <span class="detail-img-placeholder">👟</span>
             {{-- @endif --}}
             <span class="detail-badge badge-activo">Activo</span>
-            {{-- Con Laravel: --}}
-            {{-- <span class="detail-badge {{ $producto->estado === 'activo' ? 'badge-activo' : 'badge-inactivo' }}">{{ ucfirst($producto->estado) }}</span> --}}
+            {{-- Con Laravel:
+            <span class="detail-badge {{ $producto->estado === 'activo' ? 'badge-activo' : 'badge-inactivo' }}">
+                {{ ucfirst($producto->estado) }}
+            </span> --}}
         </div>
 
         <!-- COLUMNA INFO -->
@@ -111,8 +94,4 @@
 
 </div>
 
-<!-- FOOTER -->
-@include('layout.footer')
-
-</body>
-</html>
+@endsection

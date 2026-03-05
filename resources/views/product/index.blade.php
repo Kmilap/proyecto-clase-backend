@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopLaravel - Productos</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
-<body>
+@extends('layout.app')
 
-<!-- HEADER -->
-<header>
-    <a class="logo" href="#">Shop<span>Laravel</span></a>
-    <div class="header-actions">
-        <a href="#">Inicio</a>
-        <a href="#">Mi cuenta</a>
-        <a href="#" class="btn-cart">🛒 Carrito</a>
-    </div>
-</header>
-
-@include('layout.navbar')
+@section('content')
 
 <!-- HERO -->
 <div class="hero-banner">
@@ -126,8 +108,4 @@
     </div>
 </main>
 
-<!-- FOOTER -->
-@include('layout.footer')
-
-</body>
-</html>
+@endsection
