@@ -2,20 +2,28 @@
 
 namespace Database\Seeders;
 
+use App\Models\CartItem;
+use App\Models\Category;
+use App\Models\Product;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
 
-   
     public function run(): void
-    {
-        $this->call([
-            CategorySeeder::class,
-            ProductSeeder::class
+    {   
+       $this->call([
+            CategorySeeder::class,   // 1° primero categorías
+            UserSeeder::class,        // 2° luego usuarios
+            ProductSeeder::class,     // 3° luego productos (necesita categorías)
+            CartItemSeeder::class,    
         ]);
+        //Category::factory(10000)->create();
+        //User::factory(1000)->create();
+        //Product::factory(20000)->create();
+        //CartItem::factory(20000)->create();
     }
 }

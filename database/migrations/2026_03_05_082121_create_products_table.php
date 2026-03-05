@@ -13,7 +13,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->decimal('price');
+            $table->float('price');
             $table->foreignId('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
@@ -25,3 +25,4 @@ return new class extends Migration
         Schema::dropIfExists('products');
     }
 };
+ 
