@@ -5,7 +5,7 @@
 <!-- PAGE HEADER -->
 <div class="page-header">
     <div class="breadcrumb">
-        <a href="{{ route('products.index') }}">Productos</a>
+        <a href="{{ route('product.index') }}">Productos</a>
         <span class="sep">›</span>
         <span class="current">Zapatillas Running Pro</span>
         {{-- Con Laravel: <span class="current">{{ $producto->nombre }}</span> --}}
@@ -85,7 +85,7 @@
             </div>
 
             <div class="detail-actions">
-                <a href="{{ route('products.index') }}" class="btn-volver">← Volver</a>
+                <a href="{{ route('product.index') }}" class="btn-volver">← Volver</a>
                 <a href="#" class="btn-comprar">🛒 Agregar al carrito</a>
             </div>
         </div>
