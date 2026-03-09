@@ -5,7 +5,7 @@
 <!-- PAGE HEADER -->
 <div class="page-header">
     <div class="breadcrumb">
-        <a href="{{ route('products.index') }}">Productos</a>
+        <a href="{{ route('product.index') }}">Productos</a>
         <span class="sep">›</span>
         <span class="current">Nuevo producto</span>
     </div>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-body">
-            <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-row">
@@ -97,13 +97,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="estado">Estado <span class="req">*</span></label>
+                    <label for="estado">Categoría <span class="req">*</span></label>
                     <select id="estado" name="categoria" required>
-                        <option value="" disabled selected>— Selecciona el estado —</option>
-                        @foreach ( $categoryList as $category)
-                           <option value="{{ $category->id }}" {{ $category->name }}>
-                                
-                            </option> 
+                        <option value="" disabled selected>— Selecciona la categoría —</option>
+                        @foreach ($categoryList as $category)
+                            <option value="{{ $category->id }}" {{ old('categoria') == $category->id ? 'selected' : '' }}>
+                                {{ $category->name }}
+                            </option>
                         @endforeach
                     </select>
                     @error('estado')
@@ -113,8 +113,18 @@
 
                 <hr class="form-divider">
 
+                            </option> 
+                    
+                    </select>
+                    @error('estado')
+                        <div class="field-hint" style="color:#DC3545">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <hr class="form-divider">
+
                 <div class="form-actions">
-                    <a href="{{ route('products.index') }}" class="btn-cancel">Cancelar</a>
+                    <a href="{{ route('product.index') }}" class="btn-cancel">Cancelar</a>
                     <button type="submit" class="btn-submit">💾 Guardar Producto</button>
                 </div>
 
