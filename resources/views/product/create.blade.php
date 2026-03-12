@@ -48,9 +48,9 @@
                         <label for="nombre">Nombre <span class="req">*</span></label>
                         <input type="text" id="nombre" name="nombre"
                                placeholder="Ej: Zapatillas Running Pro"
-                               value="{{ old('nombre') }}" required>
+                               value="{{ old('nombre') }}">
                         @error('nombre')
-                            <div class="field-hint" style="color:#DC3545">{{ $message }}</div>
+                            <span style="color:#DC3545; font-size:14px">{{ $message }}</span>
                         @enderror
                     </div>
 
@@ -58,10 +58,10 @@
                         <label for="precio">Precio <span class="req">*</span></label>
                         <input type="number" id="precio" name="precio"
                                placeholder="Ej: 129900" min="0" step="0.01"
-                               value="{{ old('precio') }}" required>
+                               value="{{ old('precio') }}">
                         <div class="field-hint">Ingresa el precio sin puntos ni comas</div>
                         @error('precio')
-                            <div class="field-hint" style="color:#DC3545">{{ $message }}</div>
+                            <span style="color:#DC3545; font-size:14px">{{ $message }}</span>
                         @enderror
                     </div>
                 </div>
@@ -69,10 +69,9 @@
                 <div class="form-group">
                     <label for="descripcion">Descripción <span class="req">*</span></label>
                     <textarea id="descripcion" name="descripcion"
-                              placeholder="Describe las características principales del producto..."
-                              required>{{ old('descripcion') }}</textarea>
+                              placeholder="Describe las características principales del producto...">{{ old('descripcion') }}</textarea>
                     @error('descripcion')
-                        <div class="field-hint" style="color:#DC3545">{{ $message }}</div>
+                        <span style="color:#DC3545; font-size:14px">{{ $message }}</span>
                     @enderror
                 </div>
 
@@ -84,7 +83,7 @@
                            accept="image/*" onchange="previewImage(event)">
                     <div class="field-hint">Formatos: JPG, PNG, WEBP. Máximo 2MB.</div>
                     @error('imagen')
-                        <div class="field-hint" style="color:#DC3545">{{ $message }}</div>
+                        <span style="color:#DC3545; font-size:14px">{{ $message }}</span>
                     @enderror
 
                     <div class="image-preview-wrap" id="preview-wrap">
@@ -98,7 +97,7 @@
 
                 <div class="form-group">
                     <label for="estado">Categoría <span class="req">*</span></label>
-                    <select id="estado" name="categoria" required>
+                    <select id="estado" name="categoria">
                         <option value="" disabled selected>— Selecciona la categoría —</option>
                         @foreach ($categoryList as $category)
                             <option value="{{ $category->id }}" {{ old('categoria') == $category->id ? 'selected' : '' }}>
@@ -106,18 +105,8 @@
                             </option>
                         @endforeach
                     </select>
-                    @error('estado')
-                        <div class="field-hint" style="color:#DC3545">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <hr class="form-divider">
-
-                            </option> 
-                    
-                    </select>
-                    @error('estado')
-                        <div class="field-hint" style="color:#DC3545">{{ $message }}</div>
+                    @error('categoria')
+                        <span style="color:#DC3545; font-size:14px">{{ $message }}</span>
                     @enderror
                 </div>
 
