@@ -13,8 +13,18 @@
         <a class="logo" href="#">Shop<span>Laravel</span></a>
         <div class="header-actions">
             <a href="#">Inicio</a>
-            <a href="#">Mi cuenta</a>
-            <a href="#" class="btn-cart">🛒 Carrito</a>
+            @auth
+                <a href="{{ route('cart.index') }}" class="btn-cart">🛒 Carrito</a>
+                <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                    @csrf
+                    <button type="submit" style="background:none;border:none;color:#B8B0A6;font-size:0.85rem;font-weight:500;cursor:pointer;transition:color 0.2s;">
+                        Cerrar sesión
+                    </button>
+                </form>
+            @else
+                <a href="{{ route('login') }}">Iniciar sesión</a>
+                <a href="{{ route('register') }}">Registrarse</a>
+            @endauth
         </div>
     </header>
 
