@@ -50,7 +50,7 @@
                             <div class="product-desc">{{ $product->description }}</div>
                             <div class="product-footer">
                                 <span class="product-price">${{ number_format($product->price, 0, ',', '.') }}</span>
-                                <a href="{{ route('product.index') }}" class="btn-ver">Ver más</a>
+                                <a href="{{ route('product.show', $product->id) }}" class="btn-ver">Ver más</a>
                             </div>
                         </div>
                     </div>

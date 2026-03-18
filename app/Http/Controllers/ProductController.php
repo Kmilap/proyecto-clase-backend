@@ -60,8 +60,10 @@ class ProductController extends Controller
 
    
 
-    public function show($producto){
-        return  view('product.show');
+   public function show(Product $producto){
+    return view('product.show', [
+        'producto' => $producto,
+        ]);
     }
 
     public function destroy( Product $product){

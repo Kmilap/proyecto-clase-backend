@@ -64,8 +64,8 @@
                         ${{ number_format($product->price, 0, ',', '.') }}
                     </span>
 
-                    <a href="#" class="btn-ver">
-                        Ver más
+                    <a href="{{ route('product.show', $product->id) }}" class="btn-ver">
+                         Ver más
                     </a>
 
                     <form action="{{ route('product.destroy', $product->id) }}" method="POST"
