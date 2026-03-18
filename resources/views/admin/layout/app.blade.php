@@ -26,8 +26,8 @@
                 <a href="#" class="nav-item">
                     📦 Productos
                 </a>
-                <a href="#" class="nav-item">
-                    🏷️ Categorías
+                <a href="{{ route('admin.categories.index') }}" class="nav-item {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
+                     🏷️ Categorías
                 </a>
                 <a href="#" class="nav-item">
                     🛒 Pedidos
