@@ -39,7 +39,7 @@
                                         @if($item->product->image)
                                             <img src="{{ asset('storage/' . $item->product->image) }}" alt="{{ $item->product->name }}">
                                         @else
-                                            📦
+                                            <img src="{{ asset('images/ProductoDefault.png') }}" alt="Sin imagen">
                                         @endif
                                     </div>
                                     <div>

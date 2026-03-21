@@ -42,7 +42,7 @@
                             @if ($product->image)
                                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
                             @else
-                                <div class="product-img-placeholder">📦</div>
+                                <img src="{{ asset('images/ProductoDefault.png') }}" alt="Sin imagen">
                             @endif
                         </div>
                         <div class="product-body">

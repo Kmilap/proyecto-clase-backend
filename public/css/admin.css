@@ -472,3 +472,87 @@ body {
     border-color: var(--orange);
     font-weight: 600;
 }
+/* ── IMPROVED STATS ── */
+.stat-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1.8rem;
+}
+
+.stat-card-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-icon-lg {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+/* ── CHARTS ── */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.chart-container {
+    padding: 1.5rem;
+    height: 280px;
+    position: relative;
+}
+
+/* ── IMPROVED TABLE ── */
+.admin-table-striped tbody tr:nth-child(even) {
+    background: var(--light);
+}
+
+.admin-table-striped tbody tr:hover {
+    background: rgba(232, 100, 10, 0.04);
+}
+
+.td-id {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #B0A89E;
+    font-size: 0.82rem;
+}
+
+.td-name {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.td-price {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--orange);
+}
+
+.td-date {
+    color: #B0A89E;
+    font-size: 0.82rem;
+}
+
+.category-badge {
+    display: inline-block;
+    background: var(--orange-light);
+    color: var(--orange-dark);
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 768px) {
+    .charts-grid { grid-template-columns: 1fr; }
+}
